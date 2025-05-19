@@ -1,6 +1,16 @@
 <script setup lang="ts">
+import type { InternalApi } from 'nitropack'
 const route = useRoute()
 const { data, error, status, refresh } = await useFetch('/api/food')
+
+let someProperty: InternalApi['/api/foo']['post'] 
+
+someProperty = await $fetch('/api/foo', {
+  method: 'POST',
+  body: {
+    name: 'foo'
+  }
+})
 
 // proxy
 // const { data } = await useAsyncRouteData((route) => {
@@ -8,9 +18,10 @@ const { data, error, status, refresh } = await useFetch('/api/food')
 // }, { throwOnError: false })
 
 const name = ref('hi there')
-useFetch('/api/foo', {
+const { data: foo } = useFetch('/api/foo', {
+  method: 'POST',
   body: {
-    name
+    named: name.value
   }
 })
 
