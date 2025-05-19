@@ -3,9 +3,21 @@ export default defineNuxtConfig({
   // https://nitro.build/deploy#compatibility-date
   compatibilityDate: 'latest',
 
+  experimental: {
+    defaults: {
+      useAsyncData: {
+        deep: false
+      }
+    }
+    // sharedPrerenderData: true,
+  },
+
   routeRules: {
-    '/**': { ssr: false },
-    '/about': { prerender: true },
+    // '/about/**': { ssr: false },
+    '/about': {
+      prerender: true
+    },
+    '/hello': { redirect: '/about' },
   },
 
   devtools: { enabled: true },
