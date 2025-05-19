@@ -7,6 +7,16 @@ export default defineNuxtConfig({
     enabled: true,
   },
 
+  vite: {
+    resolve: {
+      dedupe: []
+    }
+  },
+
+  runtimeConfig: {
+    sessionPassword: ''
+  },
+
   extends: [
     // 'some-layer',
     // can import from #layers/some-layer
