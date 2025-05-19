@@ -1,3 +1,5 @@
+import { resolve } from 'node:path'
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   // https://nitro.build/deploy#compatibility-date
@@ -7,8 +9,25 @@ export default defineNuxtConfig({
     enabled: true,
   },
 
+  $production: {
+    nitro: {
+      storage: {
+        cache: {
+          driver: 'fs',
+          base: resolve('cache')
+        }
+      }
+    },
+  },
+
   nitro: {
-    minify: false
+    minify: false,
+    storage: {
+      cache: {
+        driver: 'fs',
+        base: resolve('cache')
+      }
+    }
   },
 
   vite: {
