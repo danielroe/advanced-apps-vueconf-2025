@@ -3,8 +3,21 @@ export default defineNuxtConfig({
   // https://nitro.build/deploy#compatibility-date
   compatibilityDate: 'latest',
 
+  extends: [
+    // 'some-layer',
+    // can import from #layers/some-layer
+    // ['some-layer', { meta: { name: 'some-layer' } }],
+  ],
+
   future: {
     compatibilityVersion: 4
+  },
+
+  components: {
+    dirs: [
+      { path: '~/components/shared' },
+      '~/components',
+    ]
   },
 
   experimental: {
@@ -25,5 +38,10 @@ export default defineNuxtConfig({
   },
 
   devtools: { enabled: true },
-  modules: ['@nuxt/fonts', '@nuxt/eslint', '@nuxt/scripts']
+  modules: [
+    '@nuxt/fonts',
+    '@nuxt/eslint',
+    '@nuxt/scripts',
+    '@pinia/nuxt'
+  ]
 })

@@ -7,7 +7,7 @@ const store = useMyStore()
 
 await callOnce(async () => {
   await store.fetchData()
-}, { mode: 'render' })
+}, { mode: 'navigation' })
 </script>
 
 <template>
