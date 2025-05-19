@@ -3,6 +3,10 @@ export default defineNuxtConfig({
   // https://nitro.build/deploy#compatibility-date
   compatibilityDate: 'latest',
 
+  future: {
+    compatibilityVersion: 4
+  },
+
   experimental: {
     defaults: {
       useAsyncData: {
