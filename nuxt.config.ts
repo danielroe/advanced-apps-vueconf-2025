@@ -2,6 +2,10 @@
 export default defineNuxtConfig({
   // https://nitro.build/deploy#compatibility-date
   compatibilityDate: 'latest',
+  
+  sharedConfig: {
+    enabled: true,
+  },
 
   extends: [
     // 'some-layer',
@@ -18,15 +22,6 @@ export default defineNuxtConfig({
       { path: '~/components/shared' },
       '~/components',
     ]
-  },
-
-  experimental: {
-    defaults: {
-      useAsyncData: {
-        deep: false
-      }
-    }
-    // sharedPrerenderData: true,
   },
 
   routeRules: {
