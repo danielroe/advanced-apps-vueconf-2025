@@ -7,6 +7,10 @@ export default defineNuxtConfig({
     enabled: true,
   },
 
+  nitro: {
+    minify: false
+  },
+
   vite: {
     resolve: {
       dedupe: []
@@ -47,6 +51,7 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@nuxt/eslint',
     '@nuxt/scripts',
-    '@pinia/nuxt'
+    '@pinia/nuxt',
+    '@nuxt/test-utils'
   ]
 })
